@@ -46,10 +46,9 @@ java -jar testaftp.jar https://SOMENUMBER.execute-api.us-east-1.amazonaws.com/de
 Execute `remove_all.sh dev` from the src directory.
 
 ## Notes:
-..* Other things to include would be:
-....* CodePipeline that would use CodeBuild to fire off the serverless commands to update the stacks when code is pushed to a repo.
-....* Put API Gateway behind a CloudFront distribution.
-....* Automated testing using Jest or another framework. Javascript isn't my strongest language, but decided to learn it tonight.
-..*Try putting in the wrong url for the test jar.
-	
+1. Other things to include would be:
+    - CodePipeline that would use CodeBuild to fire off the serverless commands to update the stacks when code is pushed to a repo.
+    -  Put API Gateway behind a CloudFront distribution.
+    - Automated testing using Jest or another framework. Javascript isn't my strongest language, but decided to learn it tonight.
+2. Try putting in the wrong url for the test jar.
 
