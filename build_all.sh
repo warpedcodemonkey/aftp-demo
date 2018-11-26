@@ -25,6 +25,9 @@ fi
 
 npm install
 
+
 sls deploy -v 
 
+
+sls invoke -f aftp-demo -d {"Message":"Blah"}
 
