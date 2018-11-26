@@ -3,7 +3,7 @@ service: aftp-demo
 provider: 
   name: aws
   runtime: nodejs8.10
-  
+  stage: ${env:STAGE}
 package:
   include: 
     - index.js
@@ -15,8 +15,8 @@ package:
     - package.json
     - readme.md
     - setenv-*.sh
+    - testaftp.jar
   excludeDevDependencies: true
-  
 functions:
   aftp-demo:
     name: aftp-demo
@@ -30,22 +30,22 @@ functions:
       Owner: ${env:OWNER_TAG}
     events:
       - http:
-          path: message
+          path: /message
           method: get
-
 resources:
-  LambdaRole:
-    Type: AWS::IAM::Role
-    Properties:
-      Path: /lambda/
-      RoleName: aftp-demo-role
-      AssumedRolePolicyDocument:
-        Version: 2012-10-17
-        Statement: 
-          - Effect: Allow
-            Principal: 
-              Service: 
-                - lambda.amazonaws.com
-            Action: "sts:AssumeRole"
-      ManagedPolicyArns:
-        - "arn:aws:iam::aws:policy/AWSLambdaExecute"
+  Resources:
+    LambdaRole:
+      Type: AWS::IAM::Role
+      Properties:
+        Path: /lambda/
+        RoleName: aftp-demo-role
+        AssumeRolePolicyDocument:
+          Version: "2012-10-17"
+          Statement: 
+            - Effect: Allow
+              Principal: 
+                Service: 
+                  - lambda.amazonaws.com
+              Action: "sts:AssumeRole"
+        ManagedPolicyArns:
+          - "arn:aws:iam::aws:policy/AWSLambdaExecute"
