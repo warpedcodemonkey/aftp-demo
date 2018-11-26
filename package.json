@@ -1,0 +1,11 @@
+{
+  "name": "aftp-demo",
+  "version": "1.0.0",
+  "description": "Automation for the people demo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Boynton",
+  "license": "ISC"
+}

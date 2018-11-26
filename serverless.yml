@@ -1,0 +1,55 @@
+service: aftp-demo
+
+provider: 
+  name: aws
+  runtime: nodejs8.10
+  
+package:
+  include: 
+    - index.js
+  exclude:
+    - .idea/**
+    - .git/**
+    - .project
+    - config.json
+    - package.json
+    - readme.md
+    - setenv-*.sh
+  excludeDevDependencies: true
+  
+functions:
+  aftp-demo-function:
+    name: aftp-demo
+    description: Automation for the People
+    memorySize: 128
+    runtime: nodejs8.10
+    timeout: 30
+    role: aftp-demo-role
+    tags:
+      Owner: ${env:OWNER_TAG}
+    events:
+      - http:
+          path: message
+          method: get
+
+resources:
+  aftp-demo-role:
+    Type: AWS::IAM::Role
+    Properties:
+      Path: /lambda/
+      RoleName: aftp-demo-role
+      AssumedRolePolicyDocument:
+        Version: 2012-10-17
+        Statement: 
+          - Effect: Allow
+            Principal: 
+              Service: 
+                - lambda.amazonaws.com
+            Action: "sts:AssumeRole"
+      ManagedPolicyArns:
+        - "arn:aws:iam::aws:policy/AWSLambdaExecute"
+
+            
+            
+            
+            

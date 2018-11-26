@@ -1,0 +1,8 @@
+node_modules
+.serverless
+.project
+.settings
+dist
+.DS_Store
+.idea/
+*.zip
