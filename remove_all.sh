@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-usage="./build_all.sh ENV \n dev, uat, prod are the available environments."
+usage="./remove_all.sh ENV \n dev, uat, prod are the available environments."
 
 
 if [ -z "$1" ]
@@ -19,12 +19,6 @@ if [ "$envfile" != "dev" ] && [ "$envfile" != "uat" ] && [ "$envfile" != "prod" 
 	exit -1
 fi
 
-
 . ./setenv-"${envfile}".sh
 
-
-npm install
-
-sls deploy -v 
-
-
+sls remove --stage $envfile

@@ -18,14 +18,6 @@ git clone https://github.com/warpedcodemonkey/aftp-demo.git
 ```
 npm install -g serverless
 ```
-## Change token in env files.
-```
-setevn-dev.sh
-setevn-uat.sh
-setevn-prod.sh
-
-Change export GIT_HUB_TOKEN=CHANGE_ME to export GIT_HUB_TOKEN=TOKEN-PROVIDED
-```
 
 ## Setup AWS CLI
 Follow the documentation at [AWS CLI Configure Documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)
@@ -51,10 +43,13 @@ java -jar testaftp.jar https://SOMENUMBER.execute-api.us-east-1.amazonaws.com/de
 ```
 
 ## Cleanup
-Execute `sls remove` from the src directory.
+Execute `remove_all.sh dev` from the src directory.
 
 ## Notes:
-	This was done in a hurry.
-	Other things to include would be a CodePipeline that would use CodeBuild to fire off the serverless commands to update the stacks when code is pushed to a repo.
-	Try putting in the wrong url for the test jar. 
+..* Other things to include would be:
+....* CodePipeline that would use CodeBuild to fire off the serverless commands to update the stacks when code is pushed to a repo.
+....* Put API Gateway behind a CloudFront distribution.
+....* Automated testing using Jest or another framework. Javascript isn't my strongest language, but decided to learn it tonight.
+..*Try putting in the wrong url for the test jar.
+	
 

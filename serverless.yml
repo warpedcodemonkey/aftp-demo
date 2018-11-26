@@ -16,6 +16,10 @@ package:
     - readme.md
     - setenv-*.sh
     - testaftp.jar
+    - README.md
+    - build_all.sh
+    - remove_all.sh
+    - package-lock.json
   excludeDevDependencies: true
 functions:
   aftp-demo:
