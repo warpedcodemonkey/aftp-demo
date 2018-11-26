@@ -1,7 +1,24 @@
-#Install serverless cli (First time only)
+# AFTP-DEMO
+Demo for Automation for the People
 
+
+## Getting Started 
+Clone repo and execute build-all.sh. The possible environment options are dev, uat, or prod.
+
+```
+./build-all.sh dev  
+```
+
+### Prerequisites
+# Clone git repo
+```
+git clone 
+```
+# Install serverless cli (First time only)
+```
 npm install -g serverless
-
+```
+  
 #Download node dependencies
 npm install
 

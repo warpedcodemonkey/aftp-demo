@@ -18,13 +18,14 @@ package:
   excludeDevDependencies: true
   
 functions:
-  aftp-demo-function:
+  aftp-demo:
     name: aftp-demo
     description: Automation for the People
+    handler: index.aftp
     memorySize: 128
     runtime: nodejs8.10
     timeout: 30
-    role: aftp-demo-role
+    role: LambdaRole
     tags:
       Owner: ${env:OWNER_TAG}
     events:
@@ -33,7 +34,7 @@ functions:
           method: get
 
 resources:
-  aftp-demo-role:
+  LambdaRole:
     Type: AWS::IAM::Role
     Properties:
       Path: /lambda/
@@ -48,8 +49,3 @@ resources:
             Action: "sts:AssumeRole"
       ManagedPolicyArns:
         - "arn:aws:iam::aws:policy/AWSLambdaExecute"
-
-            
-            
-            
-            
