@@ -51,7 +51,7 @@ java -jar testaftp.jar https://SOMENUMBER.execute-api.us-east-1.amazonaws.com/de
 ```
 
 ## Cleanup
-Execute sls remove from the src directory.
+Execute `sls remove` from the src directory.
 
 ## Notes:
 	This was done in a hurry.
