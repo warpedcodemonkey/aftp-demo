@@ -10,9 +10,9 @@ Clone repo and execute build-all.sh. The possible environment options are dev, u
 ```
 
 ### Prerequisites
-# Clone git repo
+# Clone git repo 
 ```
-git clone 
+git clone https://github.com/warpedcodemonkey/aftp-demo.git
 ```
 # Install serverless cli (First time only)
 ```
