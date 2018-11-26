@@ -1,5 +1,5 @@
 # AFTP-DEMO
-Demo for Automation for the People
+Demo for Automation for the People. Creates Lambda, CloudFormation Stack, API Gateway Rest API, and an IAM Role.
 
 
 ## Getting Started 
