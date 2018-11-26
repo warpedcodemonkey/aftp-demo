@@ -14,25 +14,15 @@ Clone repo and execute build-all.sh. The possible environment options are dev, u
 ```
 git clone https://github.com/warpedcodemonkey/aftp-demo.git
 ```
-# Install serverless cli (First time only)
+## Install serverless cli (First time only)
 ```
 npm install -g serverless
 ```
-  
-#Download node dependencies
-npm install
+### Change token in env files.
+```
+setevn-dev.sh
+setevn-uat.sh
+setevn-prod.sh
 
-#load environment variables for specific environment.
-. setenv-uat.sh
-
-#Deploy the template.
-serverless deploy -v
-
-#To package template before deploying:
-serverless package
-
-#One command deployment 
-./build-all.sh ENV 
-
-#ENV options
-dev uat or prod
+Change export GIT_HUB_TOKEN=CHANGE_ME to export GIT_HUB_TOKEN=TOKEN-PROVIDED
+```
